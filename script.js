@@ -6,17 +6,16 @@ a grid and takes the size as anargument then created another function that chang
   generated grid function to clear the previous grid and generate a new one.
 
 */
-
+const container = document.querySelector(".container");
 function chnageSize() {
   // generateGrid(0);
   const resize = document.querySelector(".resize");
   resize.addEventListener("click", () => {
     const sizing = prompt("what size of grid do you want?");
     if (sizing) {
-      // generateGrid().remove();
-      generateGrid();
-      generateGrid(sizing);
+      container.innerHTML = "";
     }
+    generateGrid(sizing);
   });
 }
 chnageSize();
@@ -28,15 +27,14 @@ function generateGrid(size) {
     }
   }
   function createRow() {
-    const container = document.querySelector(".container");
-    const div = document.createElement("div");
+    let div = document.createElement("div");
     div.classList.add("divs");
     container.appendChild(div);
     return div;
   }
 
   function col(container) {
-    const dive = document.createElement("div");
+    let dive = document.createElement("div");
     dive.classList.add("dive");
     dive.addEventListener("click", addBackground);
     container.appendChild(dive);
