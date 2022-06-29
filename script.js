@@ -1,15 +1,10 @@
 "use strict";
-/*
-what i did was create a function that generate 
-a grid and takes the size as anargument then created another function that changes the sitze ,
- and said function uses the
-  generated grid function to clear the previous grid and generate a new one.
 
-*/
 const container = document.querySelector(".container");
+const resize = document.querySelector(".resize");
+
+chnageSize();
 function chnageSize() {
-  // generateGrid(0);
-  const resize = document.querySelector(".resize");
   resize.addEventListener("click", () => {
     const sizing = prompt("what size of grid do you want?");
     if (sizing) {
@@ -18,7 +13,7 @@ function chnageSize() {
     generateGrid(sizing);
   });
 }
-chnageSize();
+
 function generateGrid(size) {
   for (let i = 0; i < size; i++) {
     let row = createRow();
@@ -44,4 +39,3 @@ function generateGrid(size) {
     this.classList.toggle("addBackground");
   }
 }
-// generateGrid(20);
